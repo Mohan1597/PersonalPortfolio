@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import fbicon from './../assets/img/nav-icon1.svg'
@@ -6,6 +6,8 @@ import instaicon from './../assets/img/nav-icon2.svg'
 import twittericon from './../assets/img/nav-icon3.svg'
 
 const NavigatioBar = () => {
+
+  const [activelink,setActiveLink]=useState(null);
   return (
     <div>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -17,13 +19,13 @@ const NavigatioBar = () => {
                 <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#" onClick={() => setActiveLink('Home')}>Home</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Skills</a>
+                    <a class="nav-link" href="#" onClick={() => setActiveLink('Skills')}>Skills</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Projects</a>
+                    <a class="nav-link" href="#" onClick={() => setActiveLink('Projects')}>Projects</a>
                     </li>
                 </ul>
                 <ul class="navbar-social">
